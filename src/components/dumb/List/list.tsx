@@ -1,5 +1,5 @@
 import { Translation } from 'interfaces';
-import classes from './list.module.scss';
+import classes from 'components/dumb/List/list.module.scss';
 
 type ListProps<T> = {
   options: T[];

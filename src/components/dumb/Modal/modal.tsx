@@ -1,7 +1,9 @@
 import { ReactNode } from 'react';
-import SvgComponent from 'components/svg/svg';
+
+import SvgComponent from 'components/dumb/svg';
 import { IconType } from 'enums/icons';
-import classes from './modal.module.scss';
+
+import classes from 'components/dumb/Modal/modal.module.scss';
 
 type ModalProps = {
   children: ReactNode;
@@ -12,7 +14,7 @@ type ModalProps = {
 export default function Modal({ isOpen, handleClose, children }: ModalProps) {
   return isOpen ? (
     <div className={classes.layout} onClick={handleClose}>
-      <div className={classes.modal} onClick={e => e.stopPropagation()}>
+      <div className={classes.modal} onClick={(e) => e.stopPropagation()}>
         <SvgComponent
           icon={IconType.Close}
           onClick={handleClose}

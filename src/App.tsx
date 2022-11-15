@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import HomePage from 'pages/home';
-import List from 'components/List/list';
+import List from 'components/dumb/List';
 import { Translation } from 'interfaces';
-import Modal from 'components/Modal/modal';
+import WordModal from 'components/smart/Modals/word-modal';
 
 function App() {
   const options: Translation[] = [
@@ -32,7 +32,7 @@ function App() {
 
   const handleOpen = () => {
     setOpen(!open);
-  }
+  };
 
   return (
     <div className="App">
@@ -41,10 +41,12 @@ function App() {
           <h1>Home Page</h1>
           <p>Some content</p>
           <button onClick={handleOpen}>open modal</button>
-          <Modal isOpen={open} handleClose={handleOpen}>
-            some content
-          </Modal>
-          <List options={options} headers={headers} onOptionClick={(value)=> {}} />
+          <WordModal isOpen={open} handleClose={handleOpen} />
+          <List
+            options={options}
+            headers={headers}
+            onOptionClick={(value) => {}}
+          />
         </div>
       </HomePage>
     </div>
