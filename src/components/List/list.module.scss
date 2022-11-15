@@ -1,0 +1,43 @@
+@import 'src/styles/_all.scss';
+
+.list {
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid $border-color;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+
+  &__header {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 1px solid $border-color;
+
+    &-item {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  &__content {
+    color: red;
+
+    &-item {
+      border-bottom: 1px solid $border-color;
+      display: flex;
+      justify-content: space-around;
+      height: 3rem;
+      align-items: center;
+
+      &:hover {
+        cursor: pointer;
+        background-color: aliceblue;
+        transition: all 0.5s;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}

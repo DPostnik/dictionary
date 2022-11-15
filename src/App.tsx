@@ -1,24 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import HomePage from 'pages/home';
+import List from 'components/List/list';
+import { Translation } from 'interfaces';
+import Modal from 'components/Modal/modal';
 
 function App() {
+  const options: Translation[] = [
+    {
+      id: '1',
+      sourceText: 'Hello',
+      targetText: 'Bonjour',
+      description: 'Hello in French',
+    },
+    {
+      id: '2',
+      sourceText: 'Hello',
+      targetText: 'Bonjour',
+      description: 'Hello in French',
+    },
+    {
+      id: '3',
+      sourceText: 'Hello',
+      targetText: 'Bonjour',
+      description: 'Hello in French',
+    },
+  ];
+
+  const headers = ['id', 'sourceText', 'targetText'];
+
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HomePage>
+        <div>
+          <h1>Home Page</h1>
+          <p>Some content</p>
+          <button onClick={handleOpen}>open modal</button>
+          <Modal isOpen={open} handleClose={handleOpen}>
+            some content
+          </Modal>
+          <List options={options} headers={headers} onOptionClick={(value)=> {}} />
+        </div>
+      </HomePage>
     </div>
   );
 }
