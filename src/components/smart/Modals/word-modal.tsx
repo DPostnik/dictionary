@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { Translation } from 'interfaces';
 import Modal from 'components/dumb/Modal';
-import ReactPortal from "components/dumb/Portal";
+import { Translation } from 'interfaces';
 
 type WordModalProps = {
   word?: Translation;
@@ -18,10 +17,8 @@ export default function WordModal({
   if (!isOpen) return null;
 
   return (
-    <ReactPortal wrapperId="word-modal">
-      <Modal isOpen={isOpen} handleClose={handleClose}>
+      <Modal isOpen={isOpen} handleClose={handleClose} wrapperId="word-modal">
         some content {word?.sourceText}
       </Modal>
-    </ReactPortal>
   );
 }
