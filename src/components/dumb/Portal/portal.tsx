@@ -8,7 +8,7 @@ type ReactPortalProps = {
   wrapperId: string;
 };
 
-function ReactPortal({ children, wrapperId }: ReactPortalProps) {
+export default function ReactPortal({ children, wrapperId }: ReactPortalProps) {
   const [wrapperElement, setWrapperElement] = useState<HTMLElement | null>(
     null
   );
@@ -34,4 +34,3 @@ function ReactPortal({ children, wrapperId }: ReactPortalProps) {
 
   return createPortal(children, wrapperElement);
 }
-export default ReactPortal;

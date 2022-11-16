@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import HomePage from 'pages/home';
 import List from 'components/dumb/List';
 import { Translation } from 'interfaces';
-import WordModal from 'components/smart/Modals/word-modal';
+import WordModal from 'components/smart/Modals/WordModal/word-modal';
 
 function App() {
   const options: Translation[] = [
