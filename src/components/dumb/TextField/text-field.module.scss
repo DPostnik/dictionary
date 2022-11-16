@@ -1,0 +1,19 @@
+.text-field {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem 2rem 0.7rem 0;
+  }
+
+  &__label {
+    font-size: 0.9rem;
+    padding: 0 0 0.2rem 0.2rem;
+  }
+
+  &__input {
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+  }
+}

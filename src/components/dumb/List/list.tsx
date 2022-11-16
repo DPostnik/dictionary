@@ -4,7 +4,7 @@ import classes from 'components/dumb/List/list.module.scss';
 type ListProps<T> = {
   options: T[];
   headers: string[];
-  onOptionClick: (option: string) => void;
+  onOptionClick: (option?: string) => void;
 };
 
 export default function List({
